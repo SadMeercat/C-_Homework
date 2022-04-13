@@ -1,2 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿Console.Write("Number: ");
+string number = "";
+number = Console.ReadLine();
+
+string lastNumber = Convert.ToString(number[number.Length-1]);
+Console.WriteLine(lastNumber);

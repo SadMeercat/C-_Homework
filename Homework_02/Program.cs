@@ -30,11 +30,65 @@ Console.Write("Введите день недели: ");
 int _numberDay = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine(_numberDay + " - " + CheckDay(_numberDay));
+
 bool CheckDay(int dayNumber){
     if(dayNumber < 6 || dayNumber > 7){
         return false;
     }
     else{
         return true;
+    }
+}
+
+//Игра угадайка. Программа загадывает случайное число. Пользователь его угадывает. Если пользователь дает неправильный ответ, то программа сообщает, больше загаданное число или меньше
+
+Random rnd = new Random();
+int _randomNumber = rnd.Next(0,100);
+
+bool _access = false;
+Console.Write($"Поробуй угадать число {_randomNumber}. Введите число: ");
+int _numberAtt = Convert.ToInt32(Console.ReadLine());
+for(int i = 0; i < 3; i++){
+    switch  (CheckNumber(_numberAtt)){
+        case 0: {
+            _access = true;
+            break;
+        }
+        case 1:{
+            Console.WriteLine("Мое число больше");
+            break;
+        }
+        case 2:{
+            Console.WriteLine("Мое число меньше");
+            break;
+        }
+    }
+    if(_access){
+        break;
+    }
+    else{
+        Console.Write("Введи число: ");
+        _numberAtt = Convert.ToInt32(Console.ReadLine());
+    }
+}
+
+if(_access){
+    Console.WriteLine("Ты победил!");
+}
+else{
+    Console.WriteLine("Ты проиграл. Увы...");
+}
+
+int CheckNumber(int number){
+    if(number == _randomNumber){
+        return 0;
+    }
+    else{
+        if(number > _randomNumber){
+            return 1;
+        }
+        else{
+            return 2;
+        }
     }
 }

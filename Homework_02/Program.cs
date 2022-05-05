@@ -32,11 +32,11 @@ int _numberDay = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine(_numberDay + " - " + CheckDay(_numberDay));
 
 bool CheckDay(int dayNumber){
-    if(dayNumber % 6 == 0 || dayNumber % 7 == 0){
-        return true;
+    if(dayNumber < 6 || dayNumber > 7){
+        return false;
     }
     else{
-        return false;
+        return true;
     }
 }
 

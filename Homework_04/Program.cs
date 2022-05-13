@@ -3,14 +3,16 @@
 //2, 4 -> 16
 
 Console.Write("Напишите число: ");
-int _number = Convert.ToInt32(Console.ReadLine());
+int number = Convert.ToInt32(Console.ReadLine());
 Console.Write("Возведем в степень: ");
-int _numberPow = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Получается " + Pow(_number, _numberPow));
+int numberPow = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Получается " + Pow(number, numberPow));
 
-int Pow(int number, int pow){
+int Pow(int number, int pow)
+{
     int result = 1;
-    for(int i = 0; i < pow; i++){
+    for(int i = 0; i < pow; i++)
+    {
         result *= number;
     }
     return result;
@@ -22,61 +24,66 @@ int Pow(int number, int pow){
 //9012 -> 12
 
 Console.Write("Напишите число: ");
-string _strNumber = Console.ReadLine();
+string strNumber = Console.ReadLine();
 
-int _summ = 0;
-for(int i = 0; i < _strNumber.Length; i++){
-    _summ += Convert.ToInt32(_strNumber[i].ToString());
+int summ = 0;
+for(int i = 0; i < strNumber.Length; i++)
+{
+    summ += Convert.ToInt32(strNumber[i].ToString());
 }
 
-Console.WriteLine("Сумма цифр: " + _summ);
+Console.WriteLine("Сумма цифр: " + summ);
 
 //Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
 //1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 //6, 1, 33 -> [6, 1, 33]
 
 Console.Write("Введите числа через запятую: ");
-string _numbers = Console.ReadLine();
-string[] _arrayNumbers = _numbers.Split(new char[] {','});
+string numbers = Console.ReadLine();
+string[] arrayNumbers = numbers.Split(new char[] {','});
 
-for(int i = 0; i < _arrayNumbers.Length; i++){
-    Console.Write($"{_arrayNumbers[i]} ");
+for(int i = 0; i < arrayNumbers.Length; i++)
+{
+    Console.Write($"{arrayNumbers[i]} ");
 }
 Console.WriteLine();
 
 //Второй вариант решения задачи
 
 Console.Write("Введите числа через запятую: ");
-_numbers = Console.ReadLine();
+numbers = Console.ReadLine();
 
-int _countNumbers = 1;
+int countNumbers = 1;
 
-for(int i = 0; i < _numbers.Length; i++){
-    if(_numbers[i] == ','){
-        _countNumbers++;
+for(int i = 0; i < numbers.Length; i++)
+{
+    if(numbers[i] == ','){
+        countNumbers++;
     }
 }
 
-int[] _numersArr = new int[_countNumbers];
-int _index = 0;
+int[] numersArr = new int[countNumbers];
+int index = 0;
 
-for(int i = 0; i < _numbers.Length; i++){
+for(int i = 0; i < numbers.Length; i++)
+{
     string tempString = "";
     
-    while(_numbers[i] != ','){
-        if(i != _numbers.Length - 1){
-            tempString += _numbers[i].ToString();
+    while(numbers[i] != ','){
+        if(i != numbers.Length - 1){
+            tempString += numbers[i].ToString();
             i++;
         }
         else{
-            tempString += _numbers[i].ToString();
+            tempString += numbers[i].ToString();
             break;
         }
     }
-    _numersArr[_index] = Convert.ToInt32(tempString);
-    _index++;
+    numersArr[index] = Convert.ToInt32(tempString);
+    index++;
 }
 
-for(int i = 0; i < _numersArr.Length; i++){
-    Console.Write(_numersArr[i] + " ");
+for(int i = 0; i < numersArr.Length; i++)
+{
+    Console.Write(numersArr[i] + " ");
 }

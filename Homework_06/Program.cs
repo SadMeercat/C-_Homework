@@ -1,31 +1,37 @@
 ﻿int[] StrToArray(string inptStr = "")
 {
-    int _countNumbers = 1;
+    int countNumbers = 1;
 
-    for(int i = 0; i < inptStr.Length; i++){
-        if(inptStr[i] == ','){
-            _countNumbers++;
+    for(int i = 0; i < inptStr.Length; i++)
+    {
+        if(inptStr[i] == ',')
+        {
+            countNumbers++;
         }
     }
 
-    int[] numersArr = new int[_countNumbers];
-    int _index = 0;
+    int[] numersArr = new int[countNumbers];
+    int index = 0;
 
-    for(int i = 0; i < inptStr.Length; i++){
+    for(int i = 0; i < inptStr.Length; i++)
+    {
         string tempString = "";
         
-        while(inptStr[i] != ','){
-            if(i != inptStr.Length - 1){
+        while(inptStr[i] != ',')
+        {
+            if(i != inptStr.Length - 1)
+            {
                 tempString += inptStr[i].ToString();
                 i++;
             }
-            else{
+            else
+            {
                 tempString += inptStr[i].ToString();
                 break;
             }
         }
-        numersArr[_index] = Convert.ToInt32(tempString);
-        _index++;
+        numersArr[index] = Convert.ToInt32(tempString);
+        index++;
     }
     return numersArr;
 }
@@ -35,19 +41,19 @@
 //-1, -7, 567, 89, 223-> 3
 
 Console.Write("Введите числа через запятую: ");
-int[] _numbers = StrToArray(Console.ReadLine());
+int[] numbers = StrToArray(Console.ReadLine());
 
-int _count = 0;
-for (var i = 0; i < _numbers.Length; i++)
+int count = 0;
+for (var i = 0; i < numbers.Length; i++)
 {
-    Console.Write(_numbers[i] + " ");
-    if(_numbers[i] > 0)
+    Console.Write(numbers[i] + " ");
+    if(numbers[i] > 0)
     {
-        _count++;
+        count++;
     }
 }
 
-Console.WriteLine("-> " + _count);
+Console.WriteLine("-> " + count);
 
 //Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями 
 //y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.

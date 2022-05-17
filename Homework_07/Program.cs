@@ -46,7 +46,7 @@ m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Номер столбца (n): ");
 n = Convert.ToInt32(Console.ReadLine());
 
-if(m > myArr.GetUpperBound(0) + 1 || n > myArr.GetUpperBound(1) + 1)
+if(m > myArr.GetLength(0) + 1 || n > myArr.GetLength(1) + 1)
 {
     Console.WriteLine("Выход за пределы границ массива!");
 }
@@ -59,9 +59,9 @@ else
 
 int[,] randomArr = new int[rnd.Next(10), rnd.Next(10)];
 
-for (var i = 0; i < randomArr.GetUpperBound(0) + 1; i++)
+for (var i = 0; i < randomArr.GetLength(0) + 1; i++)
 {
-    for (var j = 0; j < randomArr.GetUpperBound(1) + 1; j++)
+    for (var j = 0; j < randomArr.GetLength(1) + 1; j++)
     {
         randomArr[i, j] = rnd.Next(20);
         Console.Write(randomArr[i, j] + " ");
@@ -69,16 +69,16 @@ for (var i = 0; i < randomArr.GetUpperBound(0) + 1; i++)
     Console.WriteLine();
 }
 
-double[] resultsArr = new double[randomArr.GetUpperBound(1) + 1];
+double[] resultsArr = new double[randomArr.GetLength(1) + 1];
 
-for (var j = 0; j < randomArr.GetUpperBound(1) + 1; j++)
+for (var j = 0; j < randomArr.GetLength(1) + 1; j++)
 {
     resultsArr[j] = 0;
-    for (var i = 0; i < randomArr.GetUpperBound(0) + 1; i++)
+    for (var i = 0; i < randomArr.GetLength(0) + 1; i++)
     {
         resultsArr[j] += randomArr[i, j];
     }
-    resultsArr[j] /= randomArr.GetUpperBound(0) + 1;
+    resultsArr[j] /= randomArr.GetLength(0) + 1;
 }
 
 for (var i = 0; i < resultsArr.Length; i++)

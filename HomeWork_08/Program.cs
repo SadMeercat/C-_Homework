@@ -44,6 +44,16 @@ int[] BubbleSort(int[] array)
 	return array;
 }
 
+float factorial(int n)
+{
+    float i, x = 1;
+    for (i = 1; i <= n; i++)
+    {
+        x *= i;
+    }
+    return x;
+}
+
 //Задайте двумерный массив из целых чисел. Напишите программу, которая удалит строку и столбец, на пересечении которых расположен наименьший элемент массива.
 //Например, задан массив:
 //1 4 7 2
@@ -290,3 +300,18 @@ for (var i = 2; i <= el; i++)
 
 //Дополнительная задача 61: Вывести первые N строк треугольника Паскаля. Сделать вывод в виде равнобедренного треугольника
 
+Console.Write("Кол-во строк треугольника Паскаля: ");
+n = Convert.ToInt32(Console.ReadLine());
+
+for (int i = 0; i < n; i++)
+{
+    for (int c = 0; c <= (n - i); c++)
+    {
+        Console.Write(" "); 
+    }
+    for (int c = 0; c <= i; c++)
+    {
+        Console.Write(" " + (factorial(i) / (factorial(c) * factorial(i - c))));
+    }
+    Console.WriteLine();
+}

@@ -223,6 +223,31 @@ Console.WriteLine("Результат:");
 PrintArray(result);
 
 //Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+
+int[,,] my3Array = new int[3,3,2];
+
+for (var i = 0; i < my3Array.GetLength(0); i++)
+{
+    for (var j = 0; j < my3Array.GetLength(1); j++)
+    {
+        for (var k = 0; k < my3Array.GetLength(2); k++)
+        {
+            my3Array[i,j,k] = rnd.Next(10,99);
+        }
+    }
+}
+
+for (var i = 0; i < my3Array.GetLength(0); i++)
+{
+    for (var j = 0; j < my3Array.GetLength(1); j++)
+    {
+        for (var k = 0; k < my3Array.GetLength(2); k++)
+        {
+            Console.WriteLine(my3Array[i,j,k] + $" - Строка: {i + 1}; Столбец: {j + 1}; Ширина: {k + 1}");
+        }
+    }
+}
+
 //Заполните спирально массив 4 на 4.
 //1 2 3 4
 //12 13 14 5

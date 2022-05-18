@@ -132,7 +132,6 @@ Console.Write("Столбцов N: ");
 n = Convert.ToInt32(Console.ReadLine());
 
 myArray = Rnd2Array(m, n);
-resultArray = new int[m, n];
 
 Console.WriteLine("Начальный массив");
 PrintArray(myArray);
@@ -183,6 +182,7 @@ for (var i = 0; i < myArray.GetLength(0); i++)
     Console.WriteLine($"Сумма {i + 1} сроки: " + tempSumm);
     if(resSumm > tempSumm)
     {
+        resSumm = tempSumm;
         resPos = i;
     }
 }
@@ -222,9 +222,12 @@ for (int i = 0; i < firstArr.GetLength(0); i++)
 Console.WriteLine("Результат:");
 PrintArray(result);
 
-//Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+//Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
+//Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 
 int[,,] my3Array = new int[3,3,2];
+int count = 10;
+
 
 for (var i = 0; i < my3Array.GetLength(0); i++)
 {
@@ -232,7 +235,8 @@ for (var i = 0; i < my3Array.GetLength(0); i++)
     {
         for (var k = 0; k < my3Array.GetLength(2); k++)
         {
-            my3Array[i,j,k] = rnd.Next(10,99);
+            my3Array[i,j,k] = count;
+            count++;
         }
     }
 }

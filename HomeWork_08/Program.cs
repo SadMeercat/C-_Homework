@@ -294,9 +294,9 @@ for (var i = 2; i <= el; i++)
         posY--;
         result[posX, posY] = i;
     }
-    Console.WriteLine("RESULT");
-    PrintArray(result);
 }
+Console.WriteLine("Спиральная матрица");
+PrintArray(result);
 
 //Дополнительная задача 61: Вывести первые N строк треугольника Паскаля. Сделать вывод в виде равнобедренного треугольника
 

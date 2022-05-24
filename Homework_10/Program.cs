@@ -160,26 +160,28 @@ void Counting(double limit, int countPubs)
         double multWalk = 0;
         for (var i = 0; i < countPubs; i++)
         {
-            multWalk += durationWalk[i] * countPubs;
+            multWalk += durationWalk[i];
         }
         double resultDuration = durationDrink * countPubs + multWalk;
         Console.WriteLine($"Потрачено времени в пустую до падения на дно: {Math.Round(resultDuration, 2)}");
         Console.WriteLine($"Столько пабов поспособствовало: {countPubs}");
+        Console.WriteLine($"Всего времени пил: {Math.Round(resultDuration - multWalk, 2)}");
         return;
     }
     else
     {
         double resultDuration = durationDrink * countPubs;
-        countPubs++;
         double multWalk = 0;
+        countPubs++;
         for (var i = 0; i < countPubs; i++)
         {
-            multWalk += durationWalk[i] * countPubs;
+            multWalk += durationWalk[i];
         }
         resultDuration += multWalk;
         resultDuration += (limit * durationDrink / 0.57);
 
         Console.WriteLine($"Потрачено времени в пустую до падения на дно: {Math.Round(resultDuration, 2)}");
         Console.WriteLine($"Столько пабов поспособствовало: {countPubs}");
+        Console.WriteLine($"Всего времени пил: {Math.Round(resultDuration - multWalk, 2)}");
     }
 }

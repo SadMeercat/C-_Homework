@@ -46,7 +46,25 @@ else
     }
 }
 
-Console.WriteLine($"M = {m}; N = {n} -> {summ}");
+int Calculate(int m, int n)
+{
+    if(m > n)
+    {
+        Console.WriteLine(m);
+        return m + Calculate(m - 1, n);
+    }
+    else if (m < n)
+    {
+        Console.WriteLine(n);
+        return n + Calculate(m, n - 1);
+    }
+    else
+    {
+        return m;
+    }
+}
+
+Console.WriteLine($"M = {m}; N = {n} -> {Calculate(m, n)}");
 Console.WriteLine();
 
 //Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.

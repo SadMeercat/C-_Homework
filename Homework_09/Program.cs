@@ -30,22 +30,6 @@ int m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Ваше число N: ");
 n = Convert.ToInt32(Console.ReadLine());
 
-int summ = 0;
-if(m > n)
-{
-    for (var i = n ; i <= m; i++)
-    {
-        summ += i;
-    }
-}
-else
-{
-    for (var i = m ; i <= n; i++)
-    {
-        summ += i;
-    }
-}
-
 int Calculate(int m, int n)
 {
     if(m > n)
